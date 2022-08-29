@@ -1,0 +1,32 @@
+scan_timeout = 60
+add_newline = false
+
+[line_break]
+disabled = false
+
+[character]
+success_symbol = "[](green bold)"
+
+[username]
+style_user = "green bold"
+style_root = "green bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[directory]
+style = "blue bold"
+
+[cmd_duration]
+format = "[$duration]($style) "
+
+[status]
+disabled = false
+format = "[$symbol $status]($style) "
+not_found_symbol = ""
+not_executable_symbol = ""
+sigint_symbol = "ﭦ"
+map_symbol = true
+
+[git_branch]
+format = "[$symbol$branch]($style) "
