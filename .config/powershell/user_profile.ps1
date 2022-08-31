@@ -22,12 +22,12 @@ Import-Module "$HOME\.config\powershell\alias\clear_alias.ps1"
 Import-Module "$HOME\.config\powershell\alias\git.ps1"
 
 # Alias
-Set-Alias vm nvim # For Neovim
+Set-Alias -Name vm -Value nvim # For Neovim
 
-# https://github.com/zitrocode/touch-win
-Set-Alias t touch-win
+# Touch-Win: https://github.com/zitrocode/touch-win
+Set-Alias -Name t -Value touch-win
 
-# https://github.com/zitrocode/itree
+# Icon-Tree: https://github.com/zitrocode/icon-tree
 Function ItreeFolderContents { itree --folder-contents }
-Set-Alias ll itree
-Set-Alias lf ItreeFolderContents
+Set-Alias -Name ll -Value itree
+Set-Alias -Name lf -Value ItreeFolderContents
