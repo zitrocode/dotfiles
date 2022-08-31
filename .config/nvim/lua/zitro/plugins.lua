@@ -34,4 +34,5 @@ packer.startup(function(use)
 
   use 'numToStr/Comment.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'folke/todo-comments.nvim'
 end)

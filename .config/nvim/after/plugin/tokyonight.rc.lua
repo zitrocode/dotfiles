@@ -5,8 +5,8 @@ local let = vim.g
 
 let.tokyonight_style = 'night'
 let.tokyonight_terminal_colors = true
-let.tokyonight_italic_comments = true
-let.tokyonight_italic_keywords = true
+let.tokyonight_italic_comments = false
+let.tokyonight_italic_keywords = false
 let.tokyonight_italic_functions = false
 let.tokyonight_italic_variables = false
 let.tokyonight_transparent = true
