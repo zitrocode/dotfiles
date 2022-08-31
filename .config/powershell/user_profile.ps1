@@ -1,6 +1,6 @@
 # Configuration for starship
 Invoke-Expression (&starship init powershell)
-$ENV:STARSHIP_CONFIG = "$HOME\.config\powershell\starship.toml"
+$ENV:STARSHIP_CONFIG = "$HOME\.config\powershell\starship\config.toml"
 
 # Import-Module -Name Terminal-Icons
 
@@ -15,14 +15,19 @@ if ($host.Name -eq 'ConsoleHost') {
 
 $ENV:XDG_CONFIG_HOME = "$HOME\.config"
 
+# Remove Aliases
+Import-Module "$HOME\.config\powershell\alias\clear_alias.ps1"
+
+# Import Aliases for git
+Import-Module "$HOME\.config\powershell\alias\git.ps1"
+
 # Alias
-Set-Alias vm nvim
-Set-Alias g git
+Set-Alias vm nvim # For Neovim
 
-Function GitCommit { gitmoji --commit }
-Set-Alias gct GitCommit
+# https://github.com/zitrocode/touch-win
 Set-Alias t touch-win
-Set-Alias ll itree
 
+# https://github.com/zitrocode/itree
 Function ItreeFolderContents { itree --folder-contents }
+Set-Alias ll itree
 Set-Alias lf ItreeFolderContents
