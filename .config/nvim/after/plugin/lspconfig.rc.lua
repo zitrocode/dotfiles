@@ -1,5 +1,5 @@
-local status, nvim_lsp = pcall(require, 'lspconfig')
-if not status then return end
+local status_lsp, nvim_lsp = pcall(require, 'lspconfig')
+if not status_lsp then return end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -26,33 +26,37 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
-nvim_lsp.tsserver.setup {
+nvim_lsp.tsserver.setup ({
   on_attach = on_attach,
   capabilities = capabilities
-}
+})
 
-nvim_lsp.eslint.setup {
+nvim_lsp.eslint.setup ({
   on_attach = on_attach,
   capabilities = capabilities
-}
+})
 
-nvim_lsp.sumneko_lua.setup {
+local luadev = require('lua-dev').setup({
+  lspconfig = {
   on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
+    settings = {
+      Lua = {
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = { 'vim' },
+        },
 
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file('', true),
-        checkThirdParty = false
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file('', true),
+          checkThirdParty = false
+        },
       },
     },
-  },
-}
+  }
+})
+
+nvim_lsp.sumneko_lua.setup(luadev)
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }

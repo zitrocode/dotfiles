@@ -9,6 +9,8 @@ packer.startup(function(use)
 
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-lua/plenary.nvim'
+
+  use 'folke/lua-dev.nvim'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -36,10 +38,10 @@ packer.startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'folke/todo-comments.nvim'
 
-use {
-  "iamcco/markdown-preview.nvim",
-  run = function()
-    vim.fn["mkdp#util#install"]()
-  end,
-}
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  }
 end)
