@@ -29,6 +29,6 @@ Set-Alias -Name gc -Value GitClone
 Set-Alias -Name gci -Value GitCommit
 Set-Alias -Name gst -Value GitStatus
 Set-Alias -Name gpso -Value GitPushOriginOther
-Set-Alias -Name gpsom -Value GitPushOriginMater
+Set-Alias -Name gpsom -Value GitPushOriginMaster
 Set-Alias -Name gplo -Value GitPullOriginOther
 Set-Alias -Name gplom -Value GitPullOriginMaster
