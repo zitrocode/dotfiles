@@ -28,6 +28,6 @@ Set-Alias -Name vm -Value nvim # For Neovim
 Set-Alias -Name t -Value touch-win
 
 # Icon-Tree: https://github.com/zitrocode/icon-tree
-Function ItreeFolderContents { itree --folder-contents }
+Function ItreeFolderContents { itree --folder-contents --weight }
 Set-Alias -Name ll -Value itree
 Set-Alias -Name lf -Value ItreeFolderContents

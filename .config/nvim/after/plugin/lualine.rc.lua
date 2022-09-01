@@ -12,12 +12,12 @@ lualine.setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch' },
-    lualine_c = { {
-      'filename',
-      file_status = true,
-      path = 0
-    } },
-    lualine_x = {
+    lualine_c = { 
+      {
+        'filename',
+        file_status = true,
+        path = 0
+      },
       { 'diagnostics',
         sources = { 'nvim_diagnostic' },
         symbols = {
@@ -26,7 +26,10 @@ lualine.setup {
           info = ' ',
           hint = ' '
         }
-      },
+      }
+    },
+    lualine_x = {
+      'diff',
       'encoding',
       'filetype'
     },
