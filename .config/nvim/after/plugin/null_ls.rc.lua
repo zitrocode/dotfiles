@@ -4,17 +4,19 @@ if not status_null_ls then return end
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local lsp_formatting = function(bufnr)
-  vim.lsp.buf.formatting({
-    method = 'textDocument/formatting',
-    vim.api.nvim_buf_get_lines(bufnr, 0, -1, false),
-    {},
-    {
-      ['Content-Type'] = 'application/json'
-    }
-  })
+  vim.lsp.buf.format({async = true})
+
+  --[[
+      NOTE: Due to a performance issue with `vim.schedule`, 
+      the automatic saving after formatting with LSP has been delayed by 30 seconds using the `defer_fn` function.
+      This is a temporary solution and should be removed once the issue with `vim.schedule` is resolved or a better alternative is found. 
+  --]]
+  vim.defer_fn(function ()
+    vim.api.nvim_command('silent! :write')
+  end, 500)
 end
 
-null_ls.setup {
+null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.diagnostics.eslint,
@@ -32,7 +34,7 @@ null_ls.setup {
       })
     end
   end
-}
+})
 
 vim.api.nvim_create_user_command(
   'DisableLspFormatting',

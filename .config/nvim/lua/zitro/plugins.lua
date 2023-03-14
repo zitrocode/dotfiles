@@ -11,22 +11,18 @@ packer.startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-lua/popup.nvim'
 
-  use 'folke/neodev.nvim'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/nvim-cmp'
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
-  use 'MunifTanjim/eslint.nvim'
 
   use 'L3MON4D3/LuaSnip'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-
-  use 'mhartington/formatter.nvim'
 
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-telescope/telescope.nvim'
