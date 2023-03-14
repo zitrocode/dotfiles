@@ -17,46 +17,58 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 
   if client.name == 'tsserver' then
-    client.resolved_capabilities.document_formatting = false
+    -- client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
   end
 end
 
 -- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
+local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
-nvim_lsp.tsserver.setup ({
+nvim_lsp.pyright.setup({
+  on_attach= on_attach,
+  capabilities = capabilities
+})
+
+nvim_lsp.tsserver.setup({
   on_attach = on_attach,
   capabilities = capabilities
 })
 
-nvim_lsp.eslint.setup ({
+nvim_lsp.jsonls.setup({
+  capabilities = capabilities
+})
+
+--Enable (broadcasting) snippet capability for completion
+capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.cssls.setup({
   on_attach = on_attach,
   capabilities = capabilities
 })
 
-local luadev = require('lua-dev').setup({
-  lspconfig = {
-  on_attach = on_attach,
-    settings = {
-      Lua = {
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = { 'vim' },
-        },
-
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = vim.api.nvim_get_runtime_file('', true),
-          checkThirdParty = false
-        },
+nvim_lsp.lua_ls.setup({
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
       },
-    },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      }
+    }
   }
 })
-
-nvim_lsp.sumneko_lua.setup(luadev)
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }

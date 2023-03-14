@@ -1,7 +1,7 @@
 local status, packer = pcall(require, 'packer')
 if not status then return end
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd('packadd packer.nvim')
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
@@ -9,13 +9,16 @@ packer.startup(function(use)
 
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-lua/plenary.nvim'
+  use 'nvim-lua/popup.nvim'
 
-  use 'folke/lua-dev.nvim'
+  use 'folke/neodev.nvim'
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/nvim-cmp'
   use 'neovim/nvim-lspconfig'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/eslint.nvim'
 
   use 'L3MON4D3/LuaSnip'
   use {
@@ -35,13 +38,5 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   use 'numToStr/Comment.nvim'
-  use 'lukas-reineke/indent-blankline.nvim'
   use 'folke/todo-comments.nvim'
-
-  use {
-    "iamcco/markdown-preview.nvim",
-    run = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  }
 end)
