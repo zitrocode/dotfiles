@@ -4,7 +4,6 @@ local set = vim.opt
 wo.number = true
 wo.relativenumber = true
 
-set.title = true
 set.autoindent = true
 set.smartindent = true
 set.hlsearch = true
@@ -23,10 +22,13 @@ set.tabstop = 2
 set.wrap = false
 set.backspace = { 'start', 'eol', 'indent' }
 
+set.undolevels = 50
 vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 
 vim.scriptencoding = 'utf-8'
 set.encoding = 'utf-8'
 set.fileencoding = 'utf-8'
 
+set.endofline = true
+set.fileformats = 'unix,dos'
 set.formatoptions:append { 'r' }

@@ -5,34 +5,20 @@ vim.cmd('packadd packer.nvim')
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'folke/tokyonight.nvim'
+  use 'ellisonleao/gruvbox.nvim'
 
-  use 'nvim-lualine/lualine.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-lua/popup.nvim'
-
-  use 'onsails/lspkind-nvim'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/nvim-cmp'
+  -- LSP Plugins
   use 'neovim/nvim-lspconfig'
-  use 'jose-elias-alvarez/null-ls.nvim'
-
+  use 'onsails/lspkind-nvim'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
 
-  use 'kyazdani42/nvim-web-devicons'
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
-  use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
-  use 'norcalli/nvim-colorizer.lua'
-
+  -- Other plugins
+  use 'tpope/vim-commentary'
   use 'lewis6991/gitsigns.nvim'
-
-  use 'numToStr/Comment.nvim'
-  use 'folke/todo-comments.nvim'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'windwp/nvim-autopairs'
+  use 'preservim/nerdtree'
 end)
