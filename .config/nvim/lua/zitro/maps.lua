@@ -47,7 +47,7 @@ keymap.set('n', 'mk', '<C-w>+')
 keymap.set('n', 'mj', '<C-w>-')
 
 -- NERDtree
-keymap.set('n', '<Space>f', ':NERDTreeToggle<CR>', { silent = true })
+keymap.set('n', '<C-f>', ':NERDTreeToggle<CR>', { silent = true })
 
 -- Commentary
 keymap.set('n', '<Space>/', ':Commentary<CR>', { silent = true })
