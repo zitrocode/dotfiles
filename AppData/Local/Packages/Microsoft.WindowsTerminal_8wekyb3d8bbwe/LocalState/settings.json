@@ -51,7 +51,8 @@
             {
                 "face": "CaskaydiaCove Nerd Font",
                 "size": 14.0
-            }
+            },
+            "opacity": 90
         },
         "list": 
         [
