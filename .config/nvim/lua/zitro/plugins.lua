@@ -5,7 +5,7 @@ vim.cmd('packadd packer.nvim')
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'ellisonleao/gruvbox.nvim'
+  use 'morhetz/gruvbox'
 
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
@@ -19,6 +19,9 @@ packer.startup(function(use)
   use 'tpope/vim-commentary'
   use 'lewis6991/gitsigns.nvim'
   use 'norcalli/nvim-colorizer.lua'
+  use 'vim-airline/vim-airline'
   use 'windwp/nvim-autopairs'
+  use 'alvan/vim-closetag'
   use 'preservim/nerdtree'
+  use 'ryanoasis/vim-devicons'
 end)
