@@ -57,6 +57,6 @@ At this point, you should be able to enjoy my Neovim configuration. It has suppo
 | `n`  | `mh`       | Aumentar el tamaño de la ventana horizontalmente                |
 | `n`  | `mk`       | Aumentar el tamaño de la ventana verticalmente                  |
 | `n`  | `mj`       | Reducir el tamaño de la ventana verticalmente                   |
-| `n`  | `<Space>f` | Alternar NERDTree                                               |
+| `n`  | `<C-n>`    | Alternar NERDTree                                               |
 | `n`  | `<Space>/` | Comentar la línea actual o el texto visual                      |
 | `v`  | `<Space>/` | Comentar el texto seleccionado                                  |

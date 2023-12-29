@@ -1,6 +1,6 @@
 local status, cmp = pcall(require, 'cmp')
 if not status then return end
-local lspkind = require 'lspkind'
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -20,6 +20,8 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'luasnip' }
+  }, {
     { name = 'buffer' },
   }),
   formatting = {
@@ -29,5 +31,4 @@ cmp.setup({
 
 vim.cmd [[
   set completeopt=menuone,noinsert,noselect
-  highlight! default link CmpItemKind CmpItemMenuDefault
 ]]

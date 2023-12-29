@@ -40,12 +40,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
-lspconfig.pyright.setup{}
-lspconfig.tsserver.setup {}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+lspconfig.pyright.setup {
+  capabilities = capabilities
+}
+lspconfig.tsserver.setup {
+  capabilities = capabilities
+}
+lspconfig.emmet_ls.setup {
+  capabilities = capabilities
+}
 
 --Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.cssls.setup {
   capabilities = capabilities,
