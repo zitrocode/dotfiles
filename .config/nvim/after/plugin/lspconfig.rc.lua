@@ -49,7 +49,8 @@ lspconfig.tsserver.setup {
   capabilities = capabilities
 }
 lspconfig.emmet_ls.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  filetypes = { 'html', 'css' }
 }
 
 --Enable (broadcasting) snippet capability for completion
