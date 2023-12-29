@@ -25,5 +25,4 @@ packer.startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'alvan/vim-closetag'
   use 'preservim/nerdtree'
-  use 'ryanoasis/vim-devicons'
 end)
