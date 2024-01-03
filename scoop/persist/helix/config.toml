@@ -1,0 +1,73 @@
+theme = "gruvbox"
+
+[editor]
+auto-format = true
+auto-save = true
+cursorline = true
+line-number = "relative"
+bufferline = "multiple"
+color-modes = true
+mouse = false
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "version-control", "diagnostics", "spinner"]
+center = ["file-name", "file-modification-indicator"]
+right = ["file-type", "file-line-ending", "position"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.whitespace.render]
+newline = "all"
+
+[editor.whitespace.characters]
+newline = "⏎"
+
+[editor.indent-guides]
+render = true
+character = "▏"
+
+# Keymaps
+[keys.normal]
+C-s = ":write"
+C-q = ":quit!"
+C-R = ":config-reload"
+
+# Undo change
+C-z = "undo"
+# Redo change
+C-r = "redo"
+
+# Move next buffer
+tab = ":buffer-next"
+S-tab = ":buffer-previous"
+
+# Mapping for splits
+[keys.normal.s]
+# Create splits
+v = ":vsplit-new"
+s = ":hsplit-new"
+
+# Move splits
+h = "jump_view_left"
+j = "jump_view_down"
+k = "jump_view_up"
+l = "jump_view_right"
+
+# Mapping for buffer
+[keys.normal.b]
+n = ":new"
+c = "wclose"
+o = "wonly"
+
+[keys.normal.t]
+f = "file_picker"

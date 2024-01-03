@@ -7,6 +7,7 @@ Import-Module -Name Terminal-Icons
 
 $ENV:XDG_CONFIG_HOME = "$HOME\.config"
 
+Set-Alias -Name hx -Value helix
 Set-Alias -Name vm -Value nvim
 Set-Alias -Name t -Value touch-win
 
