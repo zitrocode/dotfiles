@@ -1,0 +1,58 @@
+format = """
+$os\
+$username\
+$directory\
+[\\[ ](fg:black)\
+$character"""
+
+right_format = """
+
+$git_branch\
+$git_status\
+[| ](fg:black)\
+$cmd_duration\
+[\\] ](fg:black)\
+$time\
+"""
+
+add_newline = false
+
+[os]
+disabled = false
+style = 'black'
+
+[os.symbols]
+Macos = ' '
+
+[username]
+disabled = false
+show_always = true
+style_root = 'black'
+style_user = 'black'
+
+[directory]
+home_symbol = '~'
+truncate_to_repo = true
+truncation_length = 5
+style = 'bold yellow'
+format = "[  $path ]($style)"
+
+[character]
+success_symbol = '[](green)'
+error_symbol = '[](red)'
+
+[git_branch]
+symbol = ''
+style = 'cyan'
+format = '[$symbol $branch(:$remote_branch)]($style) '
+
+[cmd_duration]
+min_time = 0
+style = 'purple'
+format = '[󱦟 $duration]($style) '
+
+[time]
+disabled = false
+time_format = '%-I:%M %P'
+style = 'green'
+format = "[  $time]($style)"

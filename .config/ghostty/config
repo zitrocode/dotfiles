@@ -1,0 +1,14 @@
+theme = "carvion"
+
+# background-opacity = 0.9
+background-blur-radius = 20
+
+font-family = "CaskaydiaMono Nerd Font"
+
+cursor-style = block
+cursor-style-blink = true
+mouse-hide-while-typing = true
+
+macos-option-as-alt = left
+keybind = alt+left=unbind
+keybind = alt+right=unbind
