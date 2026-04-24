@@ -1,6 +1,6 @@
 require("config.options")
 require("config.keymaps")
-require("config.treesitter").init()
+require("config.treesitter").setup()
 require("config.autocmds")
 require("config.diagnostics")
 

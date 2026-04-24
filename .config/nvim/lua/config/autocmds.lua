@@ -2,37 +2,6 @@
 --  See `:help lua-guide-autocommands`
 
 vim.api.nvim_create_autocmd("FileType", {
-  callback = function(ev)
-    local bufnr = ev.buf
-
-    -- Ignore specials buffers
-    if vim.bo[bufnr].buftype ~= "" then
-      return
-    end
-
-    local filetype = vim.bo[bufnr].filetype
-    local lang = vim.treesitter.language.get_lang(filetype)
-    local languages = require("config.treesitter").languages
-
-    local config = languages[lang]
-    if not lang or not config then
-      return
-    end
-
-    if not config.enabled then
-      return
-    end
-
-    local isCall = pcall(vim.treesitter.get_parser, bufnr, lang)
-    if not isCall then
-      return
-    end
-
-    vim.treesitter.start(bufnr, lang)
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
   pattern = "help",
   callback = function()
     vim.opt_local.textwidth = 78
