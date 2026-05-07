@@ -8,6 +8,7 @@ local languages = {
   },
   typescript = { "typescript" },
   tsx = { "typescriptreact" },
+  prisma = { "prisma" },
 }
 
 --- Attempt to load a Treesitter parser.

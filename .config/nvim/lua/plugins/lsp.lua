@@ -117,11 +117,21 @@ return {
       },
     })
 
+    -- CSS configuration
+    vim.lsp.config("prismals", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = {
+        "prisma",
+      },
+    })
+
     vim.lsp.enable("lua_ls")
     -- vim.lsp.enable('ts_ls')
     vim.lsp.enable("eslint")
     vim.lsp.enable("jsonls")
     vim.lsp.enable("html")
     vim.lsp.enable("cssls")
+    vim.lsp.enable("prismals")
   end,
 }
