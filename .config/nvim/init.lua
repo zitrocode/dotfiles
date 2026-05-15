@@ -1,8 +1,9 @@
 require("config.options")
 require("config.keymaps")
-require("config.treesitter").setup()
 require("config.autocmds")
-require("config.diagnostics")
+
+require("core.treesitter").setup()
+require("core.lsp")
 
 require("config.lazy")
 
